@@ -1,0 +1,144 @@
+body{
+    width: 1100px;
+    background-color: #ffffff;
+}
+header {
+    width: 1100px;
+}
+.btn-outline {
+    color: #563d7c;
+    background-color: transparent;
+    border-color: #563d7c;
+}
+.contactContainer {
+    outline-style: solid;
+    outline-color: #bbbbbb;
+    outline-width: thin;
+    padding-top: 15px;
+    width: 300px;
+    height: 350px;
+    border: #323030;
+    border-radius: 15px;
+    background-color: #ffffff;
+    float: left;
+    margin: 20px;
+}
+
+.contactContainer img {
+    padding-top: 5px;
+    display: block;
+    margin: 0 auto;
+    border: #323030;
+    border-radius: 15px;
+}
+
+.hide {
+    display: none;
+}
+
+
+.contact-searchValue {
+    padding: 5px;
+    border: 4px #004F72;
+    display: inline-block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#name {
+    padding-top: 15px;
+    text-align: center;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: large;
+}
+#group {
+    padding-top: 8px;
+    text-align: center;
+    font-family: Arial;
+    font-size: small;
+    color: #2d2d2d;
+}
+#phone {
+    padding-top: 8px;
+    text-align: center;
+    font-family: Arial;
+    font-size: small;
+    color: #2d2d2d;
+}
+
+.contactContainer button.delete{
+    padding-block: 5px;
+    background-color: #d9200b;
+    border: white;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+}
+.contactContainer #btns.edit{
+    padding-block: 5px;
+    display: inline-block;
+    background-color: #40ade0;
+    border: white;
+    border-radius: 2px;
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+    float: right;
+
+    text-decoration: none;
+}
+
+#btn {
+    padding-block: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+#add button{
+    display: block;
+    padding-block: 5px;
+    background-color: #2f9902;
+    border: white;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+}
+#addContact button{
+    display: block;
+    padding-block: 5px;
+    background-color: #2f9902;
+    border: white;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+}
+
+.showFormToAdd {
+    float: right;
+    display: inline-block;
+    padding-block: 5px;
+    background-color: #2f9902;
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+    text-decoration: none;
+    border: white;
+    border-radius: 5px;
+}
+
+#addContact div{
+    display: block;
+}
+
+.header {
+    display: block;
+    height: 200px;
+}
+.footer-cl{
+    display: block;
+    height: 200px;
+}

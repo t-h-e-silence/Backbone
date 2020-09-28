@@ -1,0 +1,83 @@
+.f
+
+body {
+    background: url('https://codernote.ru/files/image/fon-1.png');
+    font: 14px/20px 'Open Sans', serif;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    letter-spacing: -0.6px;
+}
+
+.form__wrapper {
+    width: 40%;
+    margin: 20px auto;
+}
+
+form#formAddContact {
+    position: relative;
+    background: #FFF;
+
+    padding: 10px;
+    border: 1px solid #a7a7a7;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius: 4px;
+    box-shadow: 1px 3px 10px 0px rgba(0, 0, 0, 0.10);
+}
+
+form#formAddContact div.fields {
+    position: relative;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+form#formAddContact input[type="text"], form#formAddContact input[type="password"] {
+    width: 95%;
+    outline: none;
+    padding: 5px;
+    border: 1px solid #a7a7a7;
+}
+
+form#formAddContact input[type="text"]:focus, form#formAddContact input[type="password"]:focus {
+    border: 1px solid #2A900C;
+}
+
+form#formAddContact input[type="text"].error, form#formAddContact input[type="password"].error {
+    border: 1px solid red;
+}
+
+form#formAddContact span.dot {
+    position: absolute;
+    color: red;
+    line-height: 15px;
+    right: 0;
+}
+
+form#formAddContact span.text-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: red;
+    font-size: 10px;
+    line-height: 10px;
+}
+
+form#formAddContact button {
+    position: relative;
+    margin-top: 15px;
+    right: 0;
+
+    text-decoration: none;
+    text-align: center;
+    padding: 11px 32px;
+    border: solid 1px #004F72;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #E5FFFF;
+    background-color: #3BA4C7
+}

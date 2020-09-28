@@ -1,0 +1,46 @@
+'use strict';
+
+require.config({
+    shim: {
+        underscore: {
+            exports: '_'
+        },
+        backbone: {
+            deps: [
+                'underscore',
+                'jquery'
+            ],
+            exports: 'Backbone'
+        },
+        localstorage: {
+            deps: ['backbone'],
+            exports: 'localstorage'
+        },
+        paginator: {
+            deps: ['backbone'],
+            exports: 'paginator'
+        },
+        bootstrap: {
+            deps: ['jquery'],
+            exports: 'jquery'
+        },
+        handlebars: {
+            exports: 'Handlebars'
+        }
+    },
+    paths: {
+        jquery: './node_modules/jquery/dist/jquery',
+        "jqueryui": "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min",
+        backbone: './bower_components/backbone/backbone',
+        underscore: './node_modules/lodash/lodash',
+        localstorage: "./node_modules/backbone.localstorage/backbone.localStorage",
+        paginator: "./node_modules/backbone.paginator/lib/backbone.paginator"
+    }
+});
+
+require([
+    'app/app'
+], function (MainApp) {
+    window.App = {};
+    MainApp.initialize();
+});
