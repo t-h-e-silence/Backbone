@@ -31,7 +31,7 @@ require.config({
     paths: {
         jquery: './node_modules/jquery/dist/jquery',
         "jqueryui": "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min",
-        backbone: './bower_components/backbone/backbone',
+        backbone: './node_modules/backbone/backbone',
         underscore: './node_modules/lodash/lodash',
         localstorage: "./node_modules/backbone.localstorage/backbone.localStorage",
         paginator: "./node_modules/backbone.paginator/lib/backbone.paginator"

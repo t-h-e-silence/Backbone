@@ -12,10 +12,10 @@ define([
         state: {
             firstPage: 1,
             currentPage: 1,
-            totalRecords: 3
+            totalRecords: 25
         },
         queryParam: {
-            currentPage: "current_page",
+            currentPage: 1,
             pageSize: 3
         },
     });

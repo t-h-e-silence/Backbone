@@ -25,16 +25,15 @@
     </div>
 
      <script type="text/template" id="tpl-contacts">
-
-      <!-- Add field for search -->
          <input type="text" class="contact-searchValue" value="" placeholder="Search contact ">
          <input type="submit" name="button" id="submitSearch" value= "Find!">
          <!-- -->
-         <div class="contacts-container"></div>
+         <div class="contacts-container">
+             <a id="return" href="#home" class="backFromSearch"> Return</a>
+         </div>
          <div class="empty-contacts-placeholder"></div>
          <div class="empty-search-contacts-placeholder"></div>
      </script>
-
 
     <script id="newContactTemp" type="text/template">
         <div class="form__wrapper">
@@ -87,7 +86,9 @@
 </script>
 </div>
 
+<div id="pages"></div>
 <footer>
+
     <script type="text/html" id="tmpClientPagination">
             <ul class="pagination">
                 <% if (currentPage != 1) { %>

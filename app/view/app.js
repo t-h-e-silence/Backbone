@@ -30,7 +30,6 @@ define([
                 });
             }
         }
-
     });
     return AppView;
 });

@@ -3,17 +3,18 @@ define([
     'underscore',
     'backbone',
     'app/view/contact',
-], function ($, _, Backbone, ContactView, ) {
+], function ($, _, Backbone, ContactView ) {
 
     var ContactsListView = Backbone.View.extend({
 
         template: _.template($('#tpl-contacts').html()),
-
-        initialize: function() {
+        pageTemplate: _.template($('#tmpClientPagination').html()),
+        initialize: function () {
             this.listenTo(this.collection, 'remove', this.render);
             this.$el.html(this.template);
             this.contactsContainer = this.$('.contacts-container');
-            this.searchBar = this.$('.empty-contacts-placeholder');
+            this.pagination =this.$('#pages');
+            //  this.searchBar = this.$('.empty-contacts-placeholder');
             this.emptyContactsPlaceholder = this.$('.empty-contacts-placeholder');
             this.emptySearchPlaceholder = this.$('.empty-search-contacts-placeholder');
 
@@ -53,6 +54,7 @@ define([
             } else {
                 this.emptyContactsPlaceholder.html('<div class="well text-center"><h3>There is no contacts.</h3></div>');
             }
+          //  this.emptyContactsPlaceholder.html(this.pageTemplate);
             return this;
         },
         renderOne: function(contact) {

@@ -6,6 +6,7 @@ define([
     'app/view/contact',
 ], function ($, _, Backbone) {
     var PaginationView = Backbone.View.extend({
+        tagName: 'aside',
         pagingTemplate: _.template($('#tmpClientPagination').html()),
         events: {
             'click a.first': 'gotoFirst',
@@ -14,7 +15,7 @@ define([
             'click a.last': 'gotoLast',
             'click a.page': 'gotoPage',
         },
-        tagName: 'aside',
+
         initialize: function () {
             this.collection.on('reset', this.render, this);
             this.collection.on('change', this.render, this);

@@ -1,8 +1,6 @@
 {
   "name": "advanced_backbone",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
   "dependencies": {
     "backbone": "^1.1.2",
     "backbone-validation": "^0.11.5",
@@ -16,14 +14,5 @@
     "lodash": "^4.17.20",
     "requirejs": "^2.3.6"
   },
-  "devDependencies": {},
-  "scripts": {
-      "postinstall": "node_modules/.bin/bower install",
-      "start": "node server.js"
-  },
-  "repository": {
-    "type": "git"
-  },
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {}
 }
