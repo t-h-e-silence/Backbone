@@ -2,11 +2,12 @@ define([
     'backbone',
     'app/model/contact',
     'localstorage',
-     'paginator',
+    'paginator',
 ], function (Backbone, Contact) {
     var ContactsList = Backbone.PageableCollection.extend({
+        url: "/api/contacts",
         model: Contact,
-        localStorage: new Backbone.LocalStorage("contactsStore"),
+        localStorage: new Backbone.LocalStorage("сontactsStore"),
         mode: "client",
 
         state: {

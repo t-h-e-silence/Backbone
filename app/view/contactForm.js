@@ -23,9 +23,9 @@ define([
             this.$el.append(html);
             return this;
         },
+
         submitClicked: function (e) {
             e.preventDefault();
-
             var attrs = {
                 name: this.$('#name').val(),
                 phone: this.$('#phone').val(),

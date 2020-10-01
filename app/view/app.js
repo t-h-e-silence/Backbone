@@ -15,6 +15,7 @@ define([
             this.$el.append(this.view.el);
 
             this.openView(this.view);
+
             this.closeView(closingView);
         },
 
