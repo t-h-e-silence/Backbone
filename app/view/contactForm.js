@@ -27,9 +27,9 @@ define([
         submitClicked: function (e) {
             e.preventDefault();
             var attrs = {
-                name: this.$('#name').val(),
-                phone: this.$('#phone').val(),
-                group: this.$('#group').val()
+                name: this.$('.name').val(),
+                phone: this.$('.phone').val(),
+                group: this.$('.group').val()
             };
             if (this.model.isNew()) {
                 var error = this.model.validate(attrs);

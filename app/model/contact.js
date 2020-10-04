@@ -5,9 +5,9 @@ define([
     var Contact = Backbone.Model.extend({
         defaults: {
             coverImage: 'app/css/img/img.png',
-            name: '',
-            group: ' ',
-            phone: '00000000'
+            name:'',
+            phone: '',
+            group: ''
         },
 
         validate: function (attrs) {
