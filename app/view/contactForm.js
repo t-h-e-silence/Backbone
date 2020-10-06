@@ -7,7 +7,8 @@ define([
     var ContactForm = Backbone.View.extend({
         template: _.template($('#newContactTemp').html()),
         events: {
-            'click #submitForm': 'submitClicked'
+            'click #submitForm': 'submitClicked',
+            'click #close-form': 'onFormClose'
         },
         initialize: function () {
                 this.listenTo(this.model, 'invalid', function(model, error, options) {
@@ -50,6 +51,10 @@ define([
             this.$('.form-group').removeClass('has-error');
             this.$('.help-block').html('');
         },
+        onFormClose: function(e) {
+            e.preventDefault();
+            this.trigger('form:close');
+        }
 
     });
     return ContactForm;

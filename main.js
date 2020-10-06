@@ -44,3 +44,4 @@ require([
     window.App = {};
     MainApp.initialize();
 });
+define("main", function() {});

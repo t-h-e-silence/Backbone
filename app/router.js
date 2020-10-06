@@ -28,12 +28,13 @@ define([
             var contactsList = new ContactsListView({
                 collection: this.collection
             });
-            this.appView.setViews(contactsList);
+           this.appView.setViews(contactsList);
+           $('.main-container').append(contactsList.render());
         },
 
         newContact: function() {
             var createContactsView = new ContactForm({
-                model: new Contact()
+                model: new Contact
             });
             this.appView.setViews(createContactsView);
 
