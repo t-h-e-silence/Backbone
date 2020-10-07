@@ -12,12 +12,8 @@ define([
             this.listenTo(this.collection, 'remove', this.render);
             this.$el.html(this.template);
             this.contactsContainer = this.$('.contacts-container');
-            this.pagination =this.$('#pages');
-            //  this.searchBar = this.$('.empty-contacts-placeholder');
             this.emptyContactsPlaceholder = this.$('.empty-contacts-placeholder');
             this.emptySearchPlaceholder = this.$('.empty-search-contacts-placeholder');
-            this.counter=0;
-            this.collection.getFirstPage();
         },
 
         events: {
@@ -67,23 +63,11 @@ define([
             this.render();
         },
        render: function () {
-         /*  this.contactsContainer.empty();
-            if (this.collection.length) {
-                this.collection.each(this.renderOne, this);
-            } else {
-                this.emptyContactsPlaceholder.html('<div class="well text-center"><h3>There is no contacts.</h3></div>');
-            }
-          //  this.emptyContactsPlaceholder.html(this.pageTemplate);
-            return this;*/
            return this.contactsContainer.empty(),
                this.collection.length ? this.collection.each(this.renderOne, this)
                    : this.emptyContactsPlaceholder.html('<div class="well text-center"><h3>There is no contacts.</h3> <a href="#contacts/new" class="btn btn-lg btn-outline">Add Contact</a></div>'),
                this
         },
-   /*     renderOne: function(contact) {
-            var contactView = new ContactView({model: contact});
-            this.$('.contacts-container').append(contactView.render().$el);
-        }*/
         renderOne: function(contact) {
             var contactView = new ContactView({
                 model: contact
