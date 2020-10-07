@@ -6,10 +6,8 @@ define([
 ], function ($, _, Backbone, ContactView ) {
 
     var ContactsListView = Backbone.View.extend({
-
         template: _.template($('#tpl-contacts').html()),
         pageTemplate: _.template($('#tmpClientPagination').html()),
-
         initialize: function () {
             this.listenTo(this.collection, 'remove', this.render);
             this.$el.html(this.template);
@@ -18,12 +16,26 @@ define([
             //  this.searchBar = this.$('.empty-contacts-placeholder');
             this.emptyContactsPlaceholder = this.$('.empty-contacts-placeholder');
             this.emptySearchPlaceholder = this.$('.empty-search-contacts-placeholder');
-
+            this.counter=0;
+            this.collection.getFirstPage();
         },
 
         events: {
             'click #submitSearch': 'searchContacts',
-            'click #return': 'searchClose'
+            'click #return': 'searchClose',
+            'click #next' : 'paginateNext',
+            'click #prev' :  'paginatePrev',
+        },
+
+        paginateNext: function(e){
+                e.preventDefault();
+                this.collection.getNextPage();
+                 this.render();
+            },
+        paginatePrev:  function(e){
+            e.preventDefault();
+            this.collection.getPreviousPage();
+            this.render();
         },
 
         searchContacts: function (e) {
