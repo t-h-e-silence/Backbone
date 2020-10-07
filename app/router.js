@@ -5,8 +5,9 @@ define([
     'app/model/contact',
     'app/view/contactsList',
     'app/view/contactForm',
-    'app/view/PaginationView'
-], function ($, _, Backbone, Contact, ContactsListView, ContactForm, PaginationView) {
+    //'app/view/PaginationView',
+    'app/view/HeaderView'
+], function ($, _, Backbone, Contact, ContactsListView, ContactForm, HeaderView) {
 
     var Router = Backbone.Router.extend({
 
@@ -25,11 +26,14 @@ define([
         },
 
         home: function () {
+            var header = new HeaderView();
             var contactsList = new ContactsListView({
                 collection: this.collection
             });
            this.appView.setViews(contactsList);
            $('.main-container').append(contactsList.render());
+           this.appView.addView(header);
+           // $('.main-container').prepend(header.render().el);
         },
 
         newContact: function() {

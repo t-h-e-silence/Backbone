@@ -8,16 +8,7 @@
     <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" />
 </head>
 <body>
-<header>
-   <div class="container">
-        <a id="showForm" href="#newContact" class="showFormToAdd">Add new contact</a>
-        <div class="text-center">
-            <label>
-          <!--      <input type="text" class="form-control contact-name-search" placeholder="Search"> -->
-            </label>
-        </div>
-    </div>
-</header>
+
 <div class="container">
     <div class="row">
         <div class="main-container">
@@ -25,15 +16,26 @@
     </div>
 </div>
 
+<script type="text/template" id="headerTemp">
+
+    <a id="showForm" href="#newContact" class="showFormToAdd">Add new contact header</a>
+    <input type="text" class="contact-searchValue" value="" placeholder="Search contact header">
+    <input type="submit" name="button" id="submitSearch" value= "Find!">
+    <!-- -->
+    <div class="contacts-containerHeader">
+        <a id="return" href="#home" class="backFromSearch"> Return</a>
+    </div>
+    <div class="empty-contacts-placeholderHeader"></div>
+    <div class="empty-search-contacts-placeholderHeader"></div>
+</script>
+
+
+
 <script type="layout" id="main">
 <div class="list">
 list will be here
 </div>
-
-
 </script>
-
-
      <script type="text/template" id="tpl-contacts">
          <input type="text" class="contact-searchValue" value="" placeholder="Search contact ">
          <input type="submit" name="button" id="submitSearch" value= "Find!">
