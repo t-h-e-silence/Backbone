@@ -25,31 +25,42 @@ define([
         },
 
         paginateNext: function(e){
-            this.$('.contacts-container').empty();
-            for(this.currentElement, i=0; i<3; i++,this.currentElement++ ){
-                if(this.currentElement>=this.collection.length){
-                    this.currentElement=0;
-                    this.paginateNext();
-                    return;
+            if(this.checkSize(e)) {
+                this.$('.contacts-container').empty();
+                for (this.currentElement, i = 0; i < 3; i++, this.currentElement++) {
+                    if (this.currentElement > this.collection.length) {
+                        this.currentElement = 0;
+                        return;
+                    }
+                    var add1 = this.collection.at(this.currentElement);
+                    this.renderOne(add1);
                 }
-                var add1=this.collection.at(this.currentElement);
-                this.renderOne(add1);
             }
             },
+        //maximum call stack
+        checkSize: function(e){
+          if(this.collection.length<3){
+              this.render();
+              return false;
+          }
+          return true;
+        },
         paginatePrev:  function(e){
-            this.$('.contacts-container').empty();
-            var position=this.currentElement;
-            for(this.currentElement, i=3; i>0; i--, this.currentElement--){
-                if(0>=this.currentElement){
-                    this.paginateNext();
-                    return;
+            if(this.checkSize(e)) {
+                this.$('.contacts-container').empty();
+                var position = this.currentElement;
+                for (this.currentElement, i = 3; i > 0; i--, this.currentElement--) {
+                    if (0 >= this.currentElement) {
+                        this.paginateNext();
+                        return;
+                    }
+                    if (this.currentElement > this.collection.length) {
+                        this.paginatePrev();
+                        return;
+                    }
+                    var add1 = this.collection.at(position - i);
+                    this.renderOne(add1);
                 }
-                if(this.currentElement>this.collection.length){
-                   this.paginatePrev();
-                    return;
-                }
-                var add1=this.collection.at(position-i);
-                this.renderOne(add1);
             }
         },
 
@@ -84,7 +95,7 @@ define([
        render: function () {
            return this.contactsContainer.empty(),
                this.collection.length ? this.collection.each(this.renderOne, this)
-                   : this.emptyContactsPlaceholder.html('<div class="well text-center"><h3>There is no contacts.</h3> <a href="#contacts/new" class="btn btn-lg btn-outline">Add Contact</a></div>'),
+                   : this.emptyContactsPlaceholder.html('<div class="well text-center"><h3>There is no contacts.</h3>'),
                this
         },
         renderOne: function(contact) {

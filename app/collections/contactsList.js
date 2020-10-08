@@ -8,7 +8,7 @@ define([
         url: "/api/contacts",
         model: Contact,
      //   localStorage: new Backbone.LocalStorage("сontactsStore"),
-        localStorage: new Store("contactsStore"),
+        localStorage: new Store("contactStore"),
         mode: "client",
 
     });
