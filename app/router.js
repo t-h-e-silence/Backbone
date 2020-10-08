@@ -8,9 +8,7 @@ define([
     //'app/view/PaginationView',
     'app/view/HeaderView'
 ], function ($, _, Backbone, Contact, ContactsListView, ContactForm, HeaderView) {
-
     var Router = Backbone.Router.extend({
-
         routes: {
             '': 'home',
             'home': 'home',
@@ -24,15 +22,16 @@ define([
             this.collection.fetch();
 
         },
-
         home: function () {
-            var header = new HeaderView();
+           // var header = new HeaderView();
             var contactsList = new ContactsListView({
                 collection: this.collection
             });
            this.appView.setViews(contactsList);
            $('.main-container').append(contactsList.render());
-           this.appView.addView(header);
+           // $('.content').append(contactsList.render());
+
+        //   this.appView.addView(header);
            // $('.main-container').prepend(header.render().el);
         },
 

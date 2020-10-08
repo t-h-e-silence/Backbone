@@ -33,7 +33,6 @@ body{
     display: none;
 }
 
-
 .contact-searchValue {
     padding: 5px;
     border: 4px #004F72;
@@ -77,7 +76,20 @@ body{
 .empty-search-contacts-placeholder {
     position: fixed;
 }
+.contactsList {
+    position: fixed;
+}
+.pages {
+    position:absolute;
+    height:500px;
+    padding-block: 5px;
+    display: inline-block;
+    font-family: Arial;
+    font-size: medium;
+    float: right;
 
+    text-decoration: none;
+}
 .contactContainer #btns.edit{
     padding-block: 5px;
     display: inline-block;
@@ -101,6 +113,32 @@ body{
 #add button{
     display: block;
     padding-block: 5px;
+    background-color: #2f9902;
+    border: white;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+}
+
+#next, #prev {
+    position:absolute;
+    bottom:0;
+    height:50px;
+    width:50px;
+}
+
+#next {
+    left:90px;
+    background-color: #2f9902;
+    border: white;
+    border-radius: 5px;
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+}
+
+#prev { left:130px;
     background-color: #2f9902;
     border: white;
     border-radius: 5px;
@@ -155,12 +193,4 @@ body{
 .footer-cl{
     display: block;
     height: 200px;
-}
-.footer {
-    position: fixed;
-    left: 0; bottom: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 40px;
-    border-top: 1px solid #eee;
 }

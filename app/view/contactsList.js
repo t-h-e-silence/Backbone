@@ -22,14 +22,15 @@ define([
             'click #next' : 'paginateNext',
             'click #prev' :  'paginatePrev',
         },
-
         paginateNext: function(e){
                 e.preventDefault();
+            this.emptySearchPlaceholder.empty();
                 this.collection.getNextPage();
                  this.render();
             },
         paginatePrev:  function(e){
             e.preventDefault();
+            this.emptySearchPlaceholder.empty();
             this.collection.getPreviousPage();
             this.render();
         },
@@ -37,9 +38,10 @@ define([
         searchContacts: function (e) {
             var searchTerm = $.trim(this.$('.contact-searchValue').val());
             if (searchTerm) {
-                var searchContactsByName = this.collection.where({name: searchTerm});
-                var searchContactsByGroup = this.collection.where({group: searchTerm});
-                var searchContactsByPhone = this.collection.where({phone: searchTerm});
+
+                var searchContactsByName =   this.collection.fullCollection.where({name: searchTerm});
+                var searchContactsByGroup =   this.collection.fullCollection.where({group: searchTerm});
+                var searchContactsByPhone =  this.collection.fullCollection.where({phone: searchTerm});
                 if (searchContactsByName.length || searchContactsByGroup.length || searchContactsByPhone.length) {
                     this.$('.contacts-container').empty();
                     this.emptySearchPlaceholder.empty();
@@ -47,6 +49,7 @@ define([
                     _.each(searchContactsByName, this.renderOne, this);
                     _.each(searchContactsByGroup, this.renderOne, this);
                     _.each(searchContactsByPhone, this.renderOne, this);
+                    this.$('.pages').empty();
                     this.emptySearchPlaceholder.html('<a id="return" class="backFromSearch"> Return</a></div>');
                 }
                     else {

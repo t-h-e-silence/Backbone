@@ -27,7 +27,6 @@ define([
             this.$el.html(this.template());
             return this;
         },
-
         searchContacts: function (e) {
           //   this.collection= new ContactsList();
             // this.collection.fetch();

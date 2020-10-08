@@ -1,10 +1,11 @@
 define([
     'jquery',
     'underscore',
-    'backbone'
+    'backbone',
+    'layoutmanager'
 ], function($, _, Backbone) {
-
     var AppView = Backbone.View.extend({
+        manage: true,
         el: $('.main-container'),
         setViews : function(view) {
             var closingView = this.view;

@@ -9,7 +9,6 @@ define([
             phone: '',
             group: ''
         },
-
         validate: function (attrs) {
             var errors = [];
             if (!$.trim(attrs.name)) {
@@ -23,7 +22,6 @@ define([
             }
             return errors.length > 0 ? errors : false;
         },
-
         validatePhone: function (phone) {
             var re = /^(1\s|1|)?((\(\d{3}\))|\d{3})(\-|\s)?(\d{3})(\-|\s)?(\d{4})$/;
             return re.test(phone);

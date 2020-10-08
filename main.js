@@ -35,9 +35,9 @@ require.config({
         localstorage: "./node_modules/backbone.localstorage/backbone.localStorage",
         paginator: "./node_modules/backbone.paginator/lib/backbone.paginator",
         backbone: './node_modules/backbone/backbone',
+        layoutmanager: './node_modules/backbone.layoutmanager/backbone.layoutmanager'
     }
 });
-
 require([
     'app/app'
 ], function (MainApp) {

@@ -8,7 +8,25 @@
     <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" />
 </head>
 <body>
+<!-----------------------
+Starting with Layouts
+---------------->
+<!--Layout к нему мы прикрепляем наши вьюхи -->
+<script class="template" type="template" id="forLayout">
+    <ul><h1>Contact Manager App</h1>   </ul>
+    <header></header>
+    <section class="content"></section>
+    <footer></footer>
 
+</script>
+
+<div class="layoutPlace"></div>
+
+
+
+
+<!-------------------
+------------>
 <div class="container">
     <div class="row">
         <div class="main-container">
@@ -37,18 +55,25 @@ list will be here
 </div>
 </script>
      <script type="text/template" id="tpl-contacts">
+         <div class="contactsList">
+
+         <a id="showForm" href="#newContact" class="showFormToAdd">Add new contact</a>
          <input type="text" class="contact-searchValue" value="" placeholder="Search contact ">
          <input type="submit" name="button" id="submitSearch" value= "Find!">
          <!-- -->
          <div class="contacts-container">
              <a id="return" href="#home" class="backFromSearch"> Return</a>
          </div>
-         <div class="empty-contacts-placeholder"></div>
+         <div class="empty-contacts-placeholder">
+         </div>
          <div class="empty-search-contacts-placeholder"></div>
+             <div class="pages">
+             <ul>
+                 <input type="submit" name="button" id="prev" value= "Prev">
+                 <input type="submit" name="button" id="next" value= "Next">
 
-         <div class="pages">
-             <input type="submit" name="button" id="next" value= "Next">
-             <input type="submit" name="button" id="prev" value= "Prev">
+             </ul>
+         </div>
          </div>
      </script>
 

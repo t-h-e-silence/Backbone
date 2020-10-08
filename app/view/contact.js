@@ -3,9 +3,10 @@ define([
     'underscore',
     'backbone',
     "jqueryui",
+    'layoutmanager'
 ], function($, _, Backbone) {
-
     var ContactView = Backbone.View.extend({
+        manage: true,
        tagName: 'div',
        className: 'contactContainer',
         template: _.template($('#tpl-contact').html()),

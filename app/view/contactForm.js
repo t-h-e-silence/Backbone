@@ -3,7 +3,6 @@ define([
     'underscore',
     'backbone',
 ], function($, _, Backbone) {
-
     var ContactForm = Backbone.View.extend({
         template: _.template($('#newContactTemp').html()),
         events: {
