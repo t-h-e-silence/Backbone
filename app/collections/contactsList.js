@@ -11,11 +11,6 @@ define([
         localStorage: new Store("contactsStore"),
         mode: "client",
 
-        state: {
-            currentPage: 1,
-            firstPage: 1,
-            pageSize: 3,
-        },
     });
     return ContactsList;
 });

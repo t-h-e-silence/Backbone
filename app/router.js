@@ -31,7 +31,7 @@ define([
                 collection: this.collection
             });
            this.appView.setViews(contactsList);
-           $('.main-container').append(contactsList.render());
+           $('.main-container').append(contactsList.paginateNext());
            this.appView.addView(header);
            // $('.main-container').prepend(header.render().el);
         },

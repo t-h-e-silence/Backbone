@@ -14,6 +14,7 @@ define([
             this.contactsContainer = this.$('.contacts-container');
             this.emptyContactsPlaceholder = this.$('.empty-contacts-placeholder');
             this.emptySearchPlaceholder = this.$('.empty-search-contacts-placeholder');
+            this.currentElement=0;
         },
 
         events: {
@@ -24,14 +25,32 @@ define([
         },
 
         paginateNext: function(e){
-                e.preventDefault();
-                this.collection.getNextPage();
-                 this.render();
+            this.$('.contacts-container').empty();
+            for(this.currentElement, i=0; i<3; i++,this.currentElement++ ){
+                if(this.currentElement>=this.collection.length){
+                    this.currentElement=0;
+                    this.paginateNext();
+                    return;
+                }
+                var add1=this.collection.at(this.currentElement);
+                this.renderOne(add1);
+            }
             },
         paginatePrev:  function(e){
-            e.preventDefault();
-            this.collection.getPreviousPage();
-            this.render();
+            this.$('.contacts-container').empty();
+            var position=this.currentElement;
+            for(this.currentElement, i=3; i>0; i--, this.currentElement--){
+                if(0>this.currentElement){
+                    this.paginateNext();
+                    return;
+                }
+                if(this.currentElement>this.collection.length){
+                   this.paginatePrev();
+                    return;
+                }
+                var add1=this.collection.at(position-i);
+                this.renderOne(add1);
+            }
         },
 
         searchContacts: function (e) {
