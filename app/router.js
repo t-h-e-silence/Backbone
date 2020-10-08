@@ -32,7 +32,7 @@ define([
             });
            this.appView.setViews(contactsList);
            $('.main-container').append(contactsList.paginateNext());
-           this.appView.addView(header);
+        //   this.appView.addView(header);
            // $('.main-container').prepend(header.render().el);
         },
 

@@ -40,7 +40,7 @@ define([
             this.$('.contacts-container').empty();
             var position=this.currentElement;
             for(this.currentElement, i=3; i>0; i--, this.currentElement--){
-                if(0>this.currentElement){
+                if(0>=this.currentElement){
                     this.paginateNext();
                     return;
                 }
@@ -73,13 +73,13 @@ define([
                     this.emptySearchPlaceholder.html('<div class="well text-center"><h3>There is no contacts starting with <strong>' + searchTerm + '.</strong></h3></div> <div> <a id="return" class="backFromSearch"> Return</a></div>');
                 }
             } else {
-                this.emptySearchPlaceholder.empty();
-                this.render();
+              this.searchClose();
             }
         },
         searchClose: function(){
             this.emptySearchPlaceholder.empty();
-            this.render();
+            this.currentElement=0;
+            this.paginateNext();
         },
        render: function () {
            return this.contactsContainer.empty(),
