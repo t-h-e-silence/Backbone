@@ -17,6 +17,8 @@ define([
         },
 
         events: {
+            'click #submitSearch': 'searchContacts',
+            'click #return': 'searchClose',
             'click #next' : 'paginateNext',
             'click #prev' :  'paginatePrev',
         },
