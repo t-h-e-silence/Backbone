@@ -77,11 +77,12 @@ define([
                     _.each(searchContactsByName, this.renderOne, this);
                     _.each(searchContactsByGroup, this.renderOne, this);
                     _.each(searchContactsByPhone, this.renderOne, this);
-                    this.emptySearchPlaceholder.html('<a id="return" class="backFromSearch"> Return</a></div>');
+
+                    this.emptySearchPlaceholder.html('<div class="col-md-6 text-right"><a class="btn btn-info" id="return" role="button">Return</a></div>');
                 }
                     else {
                     this.$('.contacts-container').empty();
-                    this.emptySearchPlaceholder.html('<div class="well text-center"><h3>There is no contacts starting with <strong>' + searchTerm + '.</strong></h3></div> <div> <a id="return" class="backFromSearch"> Return</a></div>');
+                    this.emptySearchPlaceholder.html('<div class="well text-center"><h3>There is no contacts starting with <strong>' + searchTerm + '.</strong></h3></div> <div><div class="col-md-6 text-right"> <a class="btn btn-info" id="return" role="button">Return</a></div></div>');
                 }
             } else {
               this.searchClose();

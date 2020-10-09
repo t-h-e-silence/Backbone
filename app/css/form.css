@@ -1,7 +1,6 @@
 .f
 
 body {
-    background: url('https://codernote.ru/files/image/fon-1.png');
     font: 14px/20px 'Open Sans', serif;
 }
 
@@ -11,9 +10,12 @@ h1, h2, h3 {
 }
 
 .form__wrapper {
-    width: 40%;
+    position: relative;
+    left: 50px;
+    width: 300%;
     margin: 20px auto;
 }
+
 
 form#formAddContact {
     position: relative;

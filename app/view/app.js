@@ -5,7 +5,7 @@ define([
 ], function($, _, Backbone) {
 
     var AppView = Backbone.View.extend({
-        el: $('.main-container'),
+        el: $('#main-container'),
         setViews : function(view) {
             var closingView = this.view;
             this.view = view;

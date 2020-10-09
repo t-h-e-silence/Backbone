@@ -13,7 +13,7 @@ define([
             this.listenTo(this.model, 'remove', this.remove)
         },
         events: {
-            'click .delete': 'deleteContactwithConfirmation',
+            'click #delete': 'deleteContactwithConfirmation',
         },
         deleteContact: function () {
             this.model.destroy();

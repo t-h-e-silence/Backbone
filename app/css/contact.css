@@ -8,17 +8,15 @@ body{
     border-color: #563d7c;
 }
 .contactContainer {
-    outline-style: solid;
-    outline-color: #bbbbbb;
-    outline-width: thin;
+
     padding-top: 15px;
     width: 300px;
     height: 350px;
-    border: #323030;
+   border: #323030;
     border-radius: 15px;
     background-color: #ffffff;
     float: left;
-    margin: 20px;
+    margin: 25px;
 }
 
 .contactContainer img {
