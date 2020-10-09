@@ -7,7 +7,6 @@ define([
 
     var ContactsListView = Backbone.View.extend({
         template: _.template($('#tpl-contacts').html()),
-        pageTemplate: _.template($('#tmpClientPagination').html()),
         initialize: function () {
             this.listenTo(this.collection, 'remove', this.render);
             this.$el.html(this.template);
@@ -18,8 +17,6 @@ define([
         },
 
         events: {
-            'click #submitSearch': 'searchContacts',
-            'click #return': 'searchClose',
             'click #next' : 'paginateNext',
             'click #prev' :  'paginatePrev',
         },

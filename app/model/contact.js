@@ -6,9 +6,10 @@ define([
         defaults: {
             coverImage: 'app/css/img/img.png',
             name:'',
-            phone: '',
+            phone:'',
             group: ''
         },
+
 
         validate: function (attrs) {
             var errors = [];

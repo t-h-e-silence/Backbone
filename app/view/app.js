@@ -19,11 +19,6 @@ define([
         openView: function(view){
             view.$el.slideToggle(5);
         },
-
-        addView: function (temp) {
-            this.$el.prepend(temp.render().el);
-        },
-
         closeView: function (view) {
             if (view){
                 view.unbind();

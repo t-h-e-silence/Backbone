@@ -65,19 +65,19 @@
                     <label for="name"><b>Name: </b> </label>
                     <input type="text" class="name" value="<%= name %>">
                     <span class="dot">*</span>
-                        <small class="help-block"></small>
+                  <p>   <small class="help-block"></small></p>
                     </div>
                     <div class="form-group has-feedback form-group-phone">
                     <label for="phone"><b>Phone: </b> </label>
                     <input type="text" class="phone" value="<%= phone %>">
                     <span class="dot">*</span>
-                        <small class="help-block"></small>
+                       <p> <small class="help-block"></small></p>
                     </div>
                     <div class="form-group has-feedback form-group-group">
                     <label for="group"><b>Group: </b> </label>
-                    <input type="text" class="group" value="<%= group %>" placeholder=" ">
+                    <input type="text" class="group" value="<%= group %>" >
                     <span class="dot">*</span>
-                        <small class="help-block"></small>
+                      <p>  <small class="help-block"></small></p>
                     </div>
                 </div>
                 <input type="submit" name="button" id="submitForm" value= "Add">
@@ -90,13 +90,11 @@
 <script type="text/template" id="tpl-contact">
     <div class="card">
         <div class="card-body">
-
     <img src="<%= coverImage %>"/>
     <div id="name"><%= name %></div>
     <div id="phone">Phone: <%= phone %></div>
     <div id="group">Group: <%= group %></div>
     <div id="btn">
-
         <a class="btn btn-info" id="edit" href="#home/edit/<%- id %>" role="button">Edit</a>
     <button class="delete btn-danger" id="delete">Delete</button></div>
         </div>

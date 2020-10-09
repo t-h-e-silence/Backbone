@@ -5,9 +5,7 @@ define([
     'app/model/contact',
     'app/view/contactsList',
     'app/view/contactForm',
-    //'app/view/PaginationView',
-    'app/view/HeaderView'
-], function ($, _, Backbone, Contact, ContactsListView, ContactForm, HeaderView) {
+], function ($, _, Backbone, Contact, ContactsListView, ContactForm) {
 
     var Router = Backbone.Router.extend({
 
@@ -16,24 +14,20 @@ define([
             'home': 'home',
             'newContact': 'newContact',
             'home/edit/:id': 'editContact',
-            'home/page/:page': 'showContactList',
         },
+
         initialize: function (options) {
             this.appView = options.view;
             this.collection = options.collection;
             this.collection.fetch();
-
         },
 
         home: function () {
-            var header = new HeaderView();
             var contactsList = new ContactsListView({
                 collection: this.collection
             });
            this.appView.setViews(contactsList);
            $('#main-container').append(contactsList.paginateNext());
-        //   this.appView.addView(header);
-           // $('.main-container').prepend(header.render().el);
         },
 
         newContact: function() {
@@ -51,7 +45,6 @@ define([
                     App.router.navigate('home', true);
                 }
             }, this);
-
             createContactsView.on('form:close', this.contactFormClose);
         },
 

@@ -9,17 +9,15 @@
     "backbone-validation": "^0.11.5",
     "backbone.localstorage": "^1.1.16",
     "backbone.paginator": "^2.0.0",
-    "backbone.layoutmanager": "~0.9.5",
-    "connect": "^3.7.0",
-    "dust": "^0.3.0",
-    "dustjs-linkedin": "^2.7.5",
     "jquery": "^2.1.1",
     "jquery-ui": "^1.12.1",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "bootstrap": "^4.5.2"
   },
   "devDependencies": {},
   "scripts": {
       "postinstall": "node_modules/.bin/bower install",
+
       "start": "node server.js"
   },
   "repository": {
