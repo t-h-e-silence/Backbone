@@ -27,7 +27,7 @@ define([
             if(this.checkSize(e)) {
                 this.$('.contacts-container').empty();
                 for (this.currentElement, i = 0; i < 3; i++, this.currentElement++) {
-                    if (this.currentElement > this.collection.length) {
+                    if (this.currentElement >= this.collection.length) {
                         this.currentElement = 0;
                         return;
                     }
@@ -53,11 +53,11 @@ define([
                         this.paginateNext();
                         return;
                     }
-                    if (this.currentElement > this.collection.length) {
-                        this.paginatePrev();
+                    if (this.currentElement == this.collection.length-1) {
+                       // this.paginatePrev();
                         return;
                     }
-                    var add1 = this.collection.at(position - i);
+                    var add1 = this.collection.at(position);
                     this.renderOne(add1);
                 }
             }

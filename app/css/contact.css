@@ -117,6 +117,7 @@ body{
     font-size: medium;
 }
 .backFromSearch {
+    position: fixed;
     float: right;
     display: inline-block;
     padding-block: 5px;
@@ -130,7 +131,8 @@ body{
 }
 
 .showFormToAdd {
-    float: right;
+    position: fixed;
+    float: bottom;
     display: inline-block;
     padding-block: 5px;
     background-color: #2f9902;

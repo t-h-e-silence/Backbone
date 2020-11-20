@@ -8,14 +8,12 @@ define([
 ], function($, _, Backbone, ContactsList) {
 
     var HeaderView = Backbone.View.extend({
-       // tagName: 'div',
-        //className: 'contactContainer',
+
         template: _.template($('#headerTemp').html()),
         initialize: function () {
             this.listenTo(this.collection, 'remove', this.render);
             this.$el.html(this.template);
             this.contactsContainer = this.$('.contacts-container');
-            //  this.searchBar = this.$('.empty-contacts-placeholder');
             this.emptyContactsPlaceholder = this.$('.empty-contacts-placeholder');
             this.emptySearchPlaceholder = this.$('.empty-search-contacts-placeholder');
         },
@@ -29,8 +27,6 @@ define([
         },
 
         searchContacts: function (e) {
-          //   this.collection= new ContactsList();
-            // this.collection.fetch();
             var searchTerm = $.trim(this.$('.contact-searchValue').val());
             if (searchTerm) {
                 var searchContactsByName = this.collection.where({name: searchTerm});

@@ -16,9 +16,8 @@
   },
   "devDependencies": {},
   "scripts": {
-      "postinstall": "node_modules/.bin/bower install",
-
-      "start": "node server.js"
+    "postinstall": "node_modules/.bin/bower install",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git"
